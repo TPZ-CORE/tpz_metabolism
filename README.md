@@ -46,3 +46,15 @@ AddEventHandler("tpz_metabolism:getCurrentTemperature", function(temperature)
 
 end)
 ```
+
+## Exports
+
+```lua exports.tpz_metabolism:getThirst()```
+
+```lua exports.tpz_metabolism:getHunger()```
+
+```lua exports.tpz_metabolism:getStress()```
+
+```lua exports.tpz_metabolism:getAlcohol()```
+
+```lua exports.tpz_metabolism:getTemperature()```
