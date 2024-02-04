@@ -14,7 +14,7 @@
 
 # Development
 
-## The following event is triggered when `tpz_metabolism` loaded the selected character meta data successfully.
+### The following event is triggered when `tpz_metabolism` loaded the selected character meta data successfully.
 
 ```lua
 AddEventHandler("tpz_metabolism:isLoaded", function()
@@ -22,7 +22,7 @@ AddEventHandler("tpz_metabolism:isLoaded", function()
 end)
 ```
 
-## The following event is triggered on every metabolism data update / change in real time.
+### The following event is triggered on every metabolism data update / change in real time.
 
 ```lua
 
@@ -36,7 +36,7 @@ AddEventHandler("tpz_metabolism:getCurrentMetabolismValues", function(hunger, th
 end)
 ```
 
-## The following event is triggered on every temperature update / change.
+### The following event is triggered on every temperature update / change.
 
 ```lua
 
