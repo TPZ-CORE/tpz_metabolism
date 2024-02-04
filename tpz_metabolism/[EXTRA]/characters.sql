@@ -1,0 +1,1 @@
+ALTER TABLE `characters` ADD `meta` LONGTEXT NOT NULL DEFAULT '[]';
