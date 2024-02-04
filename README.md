@@ -18,7 +18,7 @@
 
 ```lua
 AddEventHandler("tpz_metabolism:isLoaded", function()
-    -- do action
+
 end)
 ```
 
@@ -32,7 +32,7 @@ end)
 -- @param alcohol : returns the current alcohol.
 
 AddEventHandler("tpz_metabolism:getCurrentMetabolismValues", function(hunger, thirst, stress, alcohol)
-   -- to do action
+
 end)
 ```
 
