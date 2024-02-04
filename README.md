@@ -49,22 +49,27 @@ end)
 
 ## Exports
 
-```lua 
-exports.tpz_metabolism:getThirst() -- returns the current thirst. 
+```lua
+-- returns the current thirst. 
+exports.tpz_metabolism:getThirst()
 ```
 
 ```lua
-exports.tpz_metabolism:getHunger() -- returns the current hunger. 
-```
-
-```lua 
-exports.tpz_metabolism:getStress() -- returns the current stress. 
+-- returns the current hunger. 
+exports.tpz_metabolism:getHunger()
 ```
 
 ```lua
-exports.tpz_metabolism:getAlcohol() -- returns the current alcohol. 
+-- returns the current stress. 
+exports.tpz_metabolism:getStress()
 ```
 
 ```lua
-exports.tpz_metabolism:getTemperature() -- returns the current temperature.
+-- returns the current alcohol. 
+exports.tpz_metabolism:getAlcohol()
+```
+
+```lua
+-- returns the current temperature.
+exports.tpz_metabolism:getTemperature()
 ```
