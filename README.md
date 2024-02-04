@@ -42,7 +42,6 @@ end)
 
 -- @param temperature : returns the current temperature.
 AddEventHandler("tpz_metabolism:getCurrentTemperature", function(temperature)
-	ClientData.Temperature = temperature
 
 end)
 ```
