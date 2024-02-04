@@ -5,7 +5,7 @@
 -- Temperature Counting System which includes Clothing System.
 Citizen.CreateThread(function()
     while true do
-        Citizen.Wait(1000)
+        Citizen.Wait(2000)
 
 		if ClientData.Loaded then
 			local player    = PlayerPedId()
@@ -35,7 +35,7 @@ Citizen.CreateThread(function()
 			end
 
 			while not finished do
-				Wait(250)
+				Wait(150)
 			end
 	
 			ClientData.Temperature = math.floor(GetTemperatureAtCoords(coords) + extraTemp)
