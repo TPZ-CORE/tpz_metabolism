@@ -77,7 +77,7 @@ Citizen.CreateThread(function()
 			local removeThirstValue = 0
 			local removeHungerValue = 0
 
-			if IsPedRunning(player) or IsPedSprinting(player) then
+			if IsPedOnFoot(player) and ( IsPedRunning(player) or IsPedSprinting(player) ) then
 
 				removeThirstValue = Config.ThirstDrainRunning
 				removeHungerValue = Config.HungerDrainRunning
