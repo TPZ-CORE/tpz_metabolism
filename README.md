@@ -6,6 +6,10 @@
 2. TPZ-Characters: https://github.com/TPZ-CORE/tpz_characters
 3. TPZ-Inventory: https://github.com/TPZ-CORE/tpz_inventory
 
+## Non Requirements (Suggested)
+
+1. TPZ-Leveling: https://github.com/TPZ-CORE/tpz_leveling
+
 # Installation
 
 1. When opening the zip file, open `tpz_metabolism-main` directory folder and inside there will be another directory folder which is called as `tpz_metabolism`, this directory folder is the one that should be exported to your resources (The folder which contains `fxmanifest.lua`).
