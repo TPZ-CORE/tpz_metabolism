@@ -85,45 +85,6 @@ if Config.DevMode then
 		TriggerServerEvent("tpz_metabolism:requestPlayerMetabolism")
 	end)
 end
------------------------------------------------------------
---[[ Functions  ]]--
------------------------------------------------------------
-
-
-function vomitLogic() -- CHECK WHERE IS USED
-	hard = hard + 1
-	timer2 = 60000
-	if hard == 1 then
-		local vomitchance = math.random(1,10) -- 10% chance
-		if vomitchance == 1 then
-			local vom = math.random(1,3)
-			PlayAnimation(PlayerPedId(), Vomits["vomit"..vom])
-		end
-	elseif hard == 2 then
-		local vomitchance = math.random(1, 4) -- 25% chance
-		if vomitchance == 1 then
-			local vom = math.random(1,3)
-			PlayAnimation(PlayerPedId(), Vomits["vomit"..vom])
-		end
-	elseif hard == 3 then
-		local vomitchance = math.random(1, 2) -- 50% chance
-		if vomitchance == 1 then
-			local vom = math.random(1,3)
-			PlayAnimation(PlayerPedId(), Vomits["vomit"..vom])
-		end
-	elseif hard == 4 then
-		local vomitchance = math.random(1, 1) -- 100% chance
-		if vomitchance == 1 then
-			local vom = math.random(1,3)
-			PlayAnimation(PlayerPedId(), Vomits["vomit"..vom])
-		end
-	elseif hard == 5 then
-		SetPedToRagdoll(PlayerPedId(-1), 60000, 60000, 0, 0, 0, 0)
-		ScreenEffect("PlayerDrunk01", 5000)
-		ScreenEffect("PlayerDrunk01_PassOut", 30000)
-		hard = 0
-	end
-end
 
 -----------------------------------------------------------
 --[[ Update Events  ]]--
