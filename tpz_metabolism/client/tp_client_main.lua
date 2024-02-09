@@ -1,18 +1,4 @@
 
-
-local Timers     = {
-
-	Drunk        = 0,
-	DrunkTimer   = 0,
-}
-
-local drunken = 0
-local timer = 0
-
-local timer2 = 0
-local hard = 0
-
-
 ClientData = {
 	Loaded                    = false,
 
