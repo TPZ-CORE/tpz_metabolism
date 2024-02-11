@@ -81,6 +81,10 @@ RegisterServerEvent("tpz_metabolism:updateMetabolismType")
 AddEventHandler("tpz_metabolism:updateMetabolismType", function(type, value)
     local _source = source
 
+    if GetPlayerName(_source) == nil or ConnectedPlayers[_source] == nil then
+        return
+    end
+
     if type == "HUNGER" then 
         ConnectedPlayers[_source].hunger = value
 
