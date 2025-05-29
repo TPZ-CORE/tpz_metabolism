@@ -39,7 +39,7 @@ Config = {
 
     MinTemperature       = -4, -- If the player temperature is that low, it will start doing damage to your health.
     MinTemperatureDamage = 2,  -- Set to false if you don't want to damage the player.
-    MinTemperatureDrainThirst  = false,  -- Set to 0 if you don't want to drain thirst when player's temperature reaches the selected value.
+    MinTemperatureDrainThirst  = 0,  -- Set to 0 if you don't want to drain thirst when player's temperature reaches the selected value.
 
     MaxTemperature       = 40, -- If the player temperature is that high, it will start draining more water and hunger. (40°C As default)
     MaxTemperatureDrainThirst  = 0.3,  -- Set to 0 if you don't want to drain thirst when player's temperature reaches the selected value.
