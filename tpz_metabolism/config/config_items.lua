@@ -44,6 +44,9 @@ Items = {
 			CloseInventory = true,
 			RemoveOnUse    = true,
 
+			-- Would you like to give an item when using the specified item? 
+			GiveItemOnUse  = { Enabled = false, Item = "" },
+
 			-- The following option is only for non-stackable items.
 			-- If Durability Enabled is true, set RemoveOnUse option above to false, otherwise the following feature,
 			-- will be pointless.
@@ -86,6 +89,9 @@ Items = {
 
 			CloseInventory = true,
 			RemoveOnUse    = true,
+
+			-- Would you like to give an item when using the specified item? 
+			GiveItemOnUse  = { Enabled = false, Item = "" },
 
 			-- The following option is only for non-stackable items.
 			-- If Durability Enabled is true, set RemoveOnUse option above to false, otherwise the following feature,
@@ -131,6 +137,9 @@ Items = {
 			CloseInventory = true,
 			RemoveOnUse    = true,
 
+			-- Would you like to give an item when using the specified item? 
+			GiveItemOnUse  = { Enabled = false, Item = "" },
+
 			-- The following option is only for non-stackable items.
 			-- If Durability Enabled is true, set RemoveOnUse option above to false, otherwise the following feature,
 			-- will be pointless.
@@ -175,6 +184,9 @@ Items = {
 
 			CloseInventory = true,
 			RemoveOnUse    = true,
+
+			-- Would you like to give an item when using the specified item? 
+			GiveItemOnUse  = { Enabled = true, Item = "empty_bottle" },
 
 			-- The following option is only for non-stackable items.
 			-- If Durability Enabled is true, set RemoveOnUse option above to false, otherwise the following feature,
@@ -223,6 +235,9 @@ Items = {
 
 			CloseInventory = true,
 			RemoveOnUse    = false,
+
+			-- Would you like to give an item when using the specified item? 
+			GiveItemOnUse  = { Enabled = false, Item = "" },
 
 			-- The following option is only for non-stackable items.
 			-- If Durability Enabled is true, set RemoveOnUse option above to false, otherwise the following feature,
