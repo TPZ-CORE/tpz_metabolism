@@ -56,6 +56,14 @@ Citizen.CreateThread(function()
                 end
             end
 
+            if itemData.GiveItemOnUse.Enabled then
+
+                if TPZInv.canCarryItem(_source, itemData.GiveItemOnUse.Item, 1) then
+                    TPZInv.addItem(_source, itemData.GiveItemOnUse.Item, 1)
+                end
+
+            end
+
         end)
     end
     
