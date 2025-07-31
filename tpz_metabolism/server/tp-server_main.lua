@@ -1,15 +1,6 @@
 local TPZ = exports.tpz_core:getCoreAPI()
 
 -----------------------------------------------------------
---[[ Functions  ]]--
------------------------------------------------------------
-
-local function Round(num, numDecimalPlaces)
-    local mult = 10^(numDecimalPlaces or 0)
-    return math.floor(num * mult + 0.5) / mult
-end
-
------------------------------------------------------------
 --[[ Base Events  ]]--
 -----------------------------------------------------------
 
@@ -25,7 +16,7 @@ AddEventHandler('playerDropped', function (reason)
 
     local playerData       = ConnectedPlayers[_source]
 
-    local meta             = { hunger = Round(playerData.hunger, 4), thirst = Round(playerData.thirst, 4), stress = Round(playerData.stress, 4), alcohol = Round(playerData.alcohol, 4) }
+    local meta             = { hunger = TPZ.Round(playerData.hunger, 4), thirst = TPZ.Round(playerData.thirst, 4), stress = TPZ.Round(playerData.stress, 4), alcohol = TPZ.Round(playerData.alcohol, 4) }
     local UpdateParameters = { ['charidentifier'] = playerData.charidentifier , ['meta'] = json.encode(meta)}
 
     exports.ghmattimysql:execute("UPDATE `characters` SET `meta` = @meta WHERE `charidentifier` = @charidentifier", UpdateParameters)
