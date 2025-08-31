@@ -53,20 +53,23 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 
 	if itemData.Action.Animation == "EAT" then
 
-		local prop      = CreateObject(GetHashKey(itemData.Action.Object), coords.x, coords.y, coords.z + 0.2, true, true, false, false, true)
-		local boneIndex = GetEntityBoneIndexByName(player, "SKEL_L_Finger12")
+		if itemData.Action.Object ~= false then
+			local prop      = CreateObject(GetHashKey(itemData.Action.Object), coords.x, coords.y, coords.z + 0.2, true, true, false, false, true)
+			local boneIndex = GetEntityBoneIndexByName(player, "SKEL_L_Finger12")
+	
+			PlayAnimation(player, Attributes.Animations["EAT"])
+	
+			AttachEntityToEntity(prop, player, boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1, true)
+	
+			OnUsableItemAction(index)
+	
+			Wait(1000)
+	
+			RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
+	
+			ClearPedSecondaryTask(player)
 
-		PlayAnimation(player, Attributes.Animations["EAT"])
-
-		AttachEntityToEntity(prop, player, boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1, true)
-
-		OnUsableItemAction(index)
-
-		Wait(1000)
-
-		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
-
-		ClearPedSecondaryTask(player)
+		end
 
 	elseif itemData.Action.Animation == "EAT_BOWL_OR_PLATE" then
 
@@ -111,12 +114,12 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 		PlayAnimation(player, Attributes.Animations["DRINK_ONCE"] )
 		AttachEntityToEntity(prop, player, boneIndex, 0.03, -0.01, -0.03, 20.0, -0.0, 0.0, true, true, false, true, 1, true)
 
-		OnUsableItemAction(index)
-
 		Wait(5000)
 
 		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
 		ClearPedSecondaryTask(player)
+
+		OnUsableItemAction(index)
 
 	elseif itemData.Action.Animation == "DRINK_LONG_BOTTLE" then
 
@@ -194,13 +197,13 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 		local prop = CreateObject(GetHashKey(itemData.Action.Object), coords, true, true, true)
 
 		TaskItemInteraction_2(player, -1199896558, prop, GetHashKey('p_mugCOFFEE01x_ph_r_hand'), GetHashKey('DRINK_COFFEE_HOLD'), 3, 0, -1.0)
-		
-		OnUsableItemAction(index)
 
 		Citizen.Wait(Config.DrinkCupAnimDuration)
 
 		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
 		ClearPedSecondaryTask(player)
+
+		OnUsableItemAction(index)
 
 	end
 
