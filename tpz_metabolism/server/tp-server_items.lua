@@ -45,14 +45,19 @@ Citizen.CreateThread(function()
             if itemData.RemoveOnUse then
                 TPZInv.removeItem(_source, index, 1, data.itemId)
 
-                SendNotification(_source, itemData.NotifyOnUse, "success")
+                if itemData.NotifyOnUse ~= false then
+                    SendNotification(_source, itemData.NotifyOnUse, "success")
+                end
 
             elseif not itemData.RemoveOnUse and itemData.Durability.Enabled then
 
                 if itemData.Action.Animation ~= "DRINK_LONG_BOTTLE" then
                     TPZInv.removeItemDurability(_source, index, itemData.Durability.Value, data.itemId, itemData.Durability.Remove)
                 
-                    SendNotification(_source, itemData.NotifyOnUse, "success")
+                    if itemData.NotifyOnUse ~= false then
+                        SendNotification(_source, itemData.NotifyOnUse, "success")
+                    end
+
                 end
             end
 
