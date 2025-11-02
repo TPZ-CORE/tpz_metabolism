@@ -51,6 +51,11 @@ Citizen.CreateThread(function()
 
             elseif not itemData.RemoveOnUse and itemData.Durability.Enabled then
 
+                if tonumber(data.durability) == 0 then 
+                    SendNotification(_source, Locales['ITEM_NO_DURABILITY'], "error")
+                    return
+                end
+
                 if itemData.Action.Animation ~= "DRINK_LONG_BOTTLE" then
                     TPZInv.removeItemDurability(_source, index, itemData.Durability.Value, data.itemId, itemData.Durability.Remove)
                 
@@ -73,3 +78,4 @@ Citizen.CreateThread(function()
     end
     
 end)
+
