@@ -61,7 +61,7 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 	
 			AttachEntityToEntity(prop, player, boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1, true)
 	
-			OnUsableItemAction(index)
+			OnUsableItemAction(index, itemId)
 	
 			Wait(1000)
 	
@@ -87,7 +87,7 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 
 		Citizen.InvokeNative(0xB35370D5353995CB, player, -583731576, 1.0)
 
-		OnUsableItemAction(index)
+		OnUsableItemAction(index, itemId)
 
 		Citizen.Wait(Config.EatBowlAnimDuration)
 
@@ -102,7 +102,7 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 
 		Wait(2500)
 
-		OnUsableItemAction(index)
+		OnUsableItemAction(index, itemId)
 
 		ClearPedTasks(player)
 
@@ -119,7 +119,7 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
 		ClearPedSecondaryTask(player)
 
-		OnUsableItemAction(index)
+		OnUsableItemAction(index, itemId)
 
 	elseif itemData.Action.Animation == "DRINK_LONG_BOTTLE" then
 
@@ -203,7 +203,7 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
 		ClearPedSecondaryTask(player)
 
-		OnUsableItemAction(index)
+		OnUsableItemAction(index, itemId)
 
 	end
 
