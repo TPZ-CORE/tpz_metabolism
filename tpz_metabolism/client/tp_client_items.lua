@@ -57,12 +57,11 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 			local prop      = CreateObject(GetHashKey(itemData.Action.Object), coords.x, coords.y, coords.z + 0.2, true, true, false, false, true)
 			local boneIndex = GetEntityBoneIndexByName(player, "SKEL_L_Finger12")
 	
+			OnUsableItemAction(index, itemId)
 			PlayAnimation(player, Attributes.Animations["EAT"])
 	
 			AttachEntityToEntity(prop, player, boneIndex, 0.02, 0.028, 0.001, 15.0, 175.0, 0.0, true, true, false, true, 1, true)
-	
-			OnUsableItemAction(index, itemId)
-	
+
 			Wait(1000)
 	
 			RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
@@ -75,6 +74,8 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 
 		LoadModel("p_spoon01x")
 
+		OnUsableItemAction(index, itemId)
+
 		local prop  = CreateObject(GetHashKey(itemData.Action.Object), coords, true, true, false, false, true)
 		local spoon = CreateObject(GetHashKey("p_spoon01x"), coords, true, true, false, false, true)
 
@@ -86,8 +87,6 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 		TaskItemInteraction_2(player, 599184882, spoon, GetHashKey("p_spoon01x_ph_r_hand"), -583731576, 1, 0, -1.0)
 
 		Citizen.InvokeNative(0xB35370D5353995CB, player, -583731576, 1.0)
-
-		OnUsableItemAction(index, itemId)
 
 		Citizen.Wait(Config.EatBowlAnimDuration)
 
@@ -114,12 +113,12 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 		PlayAnimation(player, Attributes.Animations["DRINK_ONCE"] )
 		AttachEntityToEntity(prop, player, boneIndex, 0.03, -0.01, -0.03, 20.0, -0.0, 0.0, true, true, false, true, 1, true)
 
+		OnUsableItemAction(index, itemId)
+
 		Wait(5000)
 
 		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
 		ClearPedSecondaryTask(player)
-
-		OnUsableItemAction(index, itemId)
 
 	elseif itemData.Action.Animation == "DRINK_LONG_BOTTLE" then
 
@@ -154,11 +153,12 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 						if PromptHasHoldModeCompleted(prompt.prompt) then
 	
 							if prompt.type == 'USE' then
+
+								OnUsableItemAction(index, itemId)
+
 								PlayAnimation(player, Attributes.Animations["DRINK_LONG_BOTTLE"])
 	
 								Wait(Attributes.Animations["DRINK_LONG_BOTTLE"].delay_duration)
-	
-								OnUsableItemAction(index, itemId)
 	
 							elseif prompt.type == 'CANCEL' then
 	
@@ -196,14 +196,14 @@ AddEventHandler("tpz_metabolism:onUsableItemAction", function(index, itemId)
 
 		local prop = CreateObject(GetHashKey(itemData.Action.Object), coords, true, true, true)
 
+		OnUsableItemAction(index, itemId)
+
 		TaskItemInteraction_2(player, -1199896558, prop, GetHashKey('p_mugCOFFEE01x_ph_r_hand'), GetHashKey('DRINK_COFFEE_HOLD'), 3, 0, -1.0)
 
 		Citizen.Wait(Config.DrinkCupAnimDuration)
 
 		RemoveEntityProperly(prop, GetHashKey(itemData.Action.Object) )
 		ClearPedSecondaryTask(player)
-
-		OnUsableItemAction(index, itemId)
 
 	end
 
